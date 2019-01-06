@@ -1,4 +1,3 @@
-#Updated March 2018
 #Isha Puri, ishapuri101@gmail.com
 
 #Terminal Command: python forDemo.py --shape-predictor shape_predictor_68_face_landmarks.dat --picamera 1
