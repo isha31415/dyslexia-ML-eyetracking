@@ -473,8 +473,8 @@ milliSecondProgression = []
 for x in frameCounterProgression:
     milliSecondProgression.append(float(float(x)*constantMultiplier))
 
-
-if (averageFixationLengthMS>385):
+#determined this threshold of 385ms after analysis of a dataset of 185 eye movement recordings from the Karolinsa Institute in Sweden 
+if (averageFixationLengthMS>385): 
     print('You could be dyslexic! Please seek expert medical advice')
 else:
     print('You are most likely not dyslexic. Have a great day!')
@@ -485,13 +485,13 @@ plt.subplot(221)
 plt.plot(milliSecondProgression, newRightEyeProgressionX, 'C0')
 plt.axis([0, float(frameCounter)*constantMultiplier, (RXMin), (RXMax)])
 plt.title("Right Eye Pupil Progression")
-plt.xlabel("Milliseconds")
+plt.xlabel("Frames")
 plt.ylabel("Pixels")
 
 plt.subplot(222)
 plt.plot(milliSecondProgression, final_fixation_saccade, 'C0')
 plt.axis([0, float(frameCounter)*constantMultiplier, 0, 3])
 plt.title("Fixations in Right Eye Pupil Progression")
-plt.xlabel("Milliseconds")
+plt.xlabel("Frames")
 plt.ylabel("Fixation")
 plt.show()
