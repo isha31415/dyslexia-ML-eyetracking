@@ -1,7 +1,9 @@
 #Updated March 2018
 #Isha Puri, ishapuri101@gmail.com
 
-#Terminal Command: python final_dyslexia_diagnostic_code.py --shape-predictor shape_predictor_68_face_landmarks.dat --picamera 1
+#Terminal Command: python forDemo.py --shape-predictor shape_predictor_68_face_landmarks.dat --picamera 1
+
+#Please see the following link for the full research paper: http://bit.ly/2C6SsEz
 
 # import the necessary packages
 from imutils.video import VideoStream
@@ -473,6 +475,12 @@ for x in frameCounterProgression:
     milliSecondProgression.append(float(float(x)*constantMultiplier))
 
 
+if (averageFixationLengthMS>385):
+    print('You could be dyslexic! Please seek expert medical advice')
+else:
+    print('You are most likely not dyslexic. Have a great day!')
+
+
 plt.figure(1)
 plt.subplot(221)
 plt.plot(milliSecondProgression, newRightEyeProgressionX, 'C0')
@@ -488,9 +496,3 @@ plt.title("Fixations in Right Eye Pupil Progression")
 plt.xlabel("Milliseconds")
 plt.ylabel("Fixation")
 plt.show()
-
-
-if ((averageFixationLengthMS>200) and (averageFixationLengthMS<250)):
-    print('YOU ARE PROBABLY NOT DYSLEXIC')
-if ((averageFixationLengthMS>330) and (averageFixationLengthMS<350)):
-    print('YOU ARE PROBABLY DYSLEXIC')
